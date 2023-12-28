@@ -30,7 +30,7 @@ const SmallHeader = () => {
                 </span>
               </div>
             </div>
-            <div className="col-6 text-end d-none d-md-block">
+            <div className="col-12 mt-2 mt-md-0 text-center text-md-end">
               <Link
                 href={admin !== null ? "/dashboard" : "/login"}
                 className={classes.smallHeaderLoginText}
