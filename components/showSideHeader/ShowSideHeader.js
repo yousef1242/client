@@ -2,9 +2,12 @@ import Link from "next/link";
 import classes from "./showSideHeader.module.css";
 import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 const ShowSideHeader = ({ setShowSideHeader }) => {
   const router = useRouter();
+  const { admin } = useSelector((state) => state.admin);
+
   return (
     <>
       <div className={classes.ovelay}></div>
@@ -22,9 +25,7 @@ const ShowSideHeader = ({ setShowSideHeader }) => {
             Home
           </Link>
           <Link
-            className={
-              router.pathname === "/cars" ? classes.toOrangeColor : ""
-            }
+            className={router.pathname === "/cars" ? classes.toOrangeColor : ""}
             href={`/cars`}
           >
             Cars
@@ -44,6 +45,16 @@ const ShowSideHeader = ({ setShowSideHeader }) => {
             href={`/contact`}
           >
             Contact
+          </Link>
+          <Link
+            href={admin !== null ? "/dashboard" : "/login"}
+            className={
+              router.pathname === "/login" || router.pathname === "/dashboard"
+                ? classes.toOrangeColor
+                : ""
+            }
+          >
+            {admin !== null ? "Dashboard" : "Login"}
           </Link>
         </div>
       </div>

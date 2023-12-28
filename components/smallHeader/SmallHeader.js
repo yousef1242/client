@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 const SmallHeader = () => {
   const { admin } = useSelector((state) => state.admin);
+  
   return (
     <>
       <div className={classes.smallHeader}>
@@ -30,7 +31,7 @@ const SmallHeader = () => {
                 </span>
               </div>
             </div>
-            <div className="col-12 mt-2 mt-md-0 text-center text-md-end">
+            <div className="col-6 text-end d-none d-md-block">
               <Link
                 href={admin !== null ? "/dashboard" : "/login"}
                 className={classes.smallHeaderLoginText}
