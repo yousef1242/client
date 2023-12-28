@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
   FaPhoneAlt,
   FaFacebook,
@@ -7,7 +6,6 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { MapContainer, TileLayer } from "react-leaflet";
 import Head from "next/head";
 import Link from "next/link";
 import Footer from "@/components/footer/Footer";
@@ -68,17 +66,6 @@ const ContactPage = () => {
               </div>
             </div>
             <div className="col-8">
-              <MapContainer
-                center={[51.505, -0.09]}
-                zoom={13}
-                scrollWheelZoom={false}
-              >
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {/* Other components specific to your map */}
-              </MapContainer>
             </div>
           </div>
         </div>
