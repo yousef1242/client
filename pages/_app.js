@@ -1,9 +1,5 @@
 import "@/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import 'leaflet/dist/leaflet.css';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Provider } from "react-redux";
 import { store } from "@/redux/store";
 import { Toaster } from "react-hot-toast";
