@@ -1,0 +1,11 @@
+@media screen and (max-width:768px) {
+    .filterCarsModel{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 272px;
+        background: #fff;
+        z-index: 99999999;
+        overflow: scroll;
+    }
+}

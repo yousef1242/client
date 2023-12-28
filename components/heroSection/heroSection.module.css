@@ -1,0 +1,37 @@
+.heroSection {
+  height: calc(100vh - 106px);
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  background-image: url("../../public/heroSectionImage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.heroSection::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #00000052;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.searchBoxHeader {
+  background-color: #f7f9fb !important;
+  padding: 10px 20px 10px 20px;
+  border-top: 1px solid var(--orange);
+}
+.searchBoxContent {
+  padding: 10px 20px 10px 20px;
+}
+.searchBoxContent .formGroup{
+    margin-bottom: 20px;
+}
+@media screen and (max-width:767px) {
+    .searchBox{
+        box-shadow: 0 0 10px #d5d4d4;
+    }
+}

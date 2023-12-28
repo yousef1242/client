@@ -1,0 +1,32 @@
+.showSideHeader {
+  position: fixed;
+  left: 0;
+  width: 272px;
+  background: #fff;
+  z-index: 9999999;
+  height: 100vh;
+  top: 0;
+  transition: .3s;
+}
+.showSideHeader .ShowSideHeaderTop {
+  border-bottom: 1px solid var(--gray);
+  padding: 15px 5px;
+  text-align: end;
+}
+.showSideHeader .ShowSideHeaderTop span {
+  font-size: 22px;
+  cursor: pointer;
+}
+.showSideHeader .ShowSideHeaderLinks a {
+  border-bottom: 1px solid var(--gray);
+  padding: 15px 10px;
+  display: block;
+  color: var(--black);
+}
+.ovelay {
+  height: 100vh;
+  width: 100%;
+  background-color: #0000000f;
+  top: 0;
+  position: fixed;
+}

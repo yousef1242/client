@@ -1,0 +1,62 @@
+.opinionsSection {
+  padding: 100px 0;
+  background-color: #fff;
+}
+.opinionsSection .container {
+  width: 50%;
+  background-image: url("../../public/opinionSectionImage.png");
+  background-size: cover;
+  background-position: center;
+}
+.opinionsSection h2::after{
+    position: absolute;
+    text-align: center;
+    content: "";
+    width: 34%;
+    height: 3px;
+    background-color: var(--orange);
+    left: 50%;
+    bottom: -13px;
+    right: 50%;
+    transform: translateX(-50%);
+}
+.opinionsSection .container .opinionsSectionSliderBoxYellow{
+    background-color: #f6e366;
+    padding: 20px;
+    border-radius: 10px;
+}
+.opinionsSection .container .opinionsSectionSliderBoxGreen{
+    background-color: #9be193;
+    padding: 20px;
+    border-radius: 10px;
+}
+.opinionsSection .container p{
+    font-weight: bold;
+    line-height: 30px;
+    color: #5252ef;
+}
+.opinionsSection .container .opinionsSectionSliderBoxImageLetter{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background-color: var(--black);
+    border-radius: 50%;
+    padding-bottom: 6px;
+    color: #fff;
+}
+.opinionsSection .slider button{
+    margin: 21px;
+    z-index: 999;
+    margin-top: 3px;
+}
+.opinionsSection .slider button::before{
+    color: var(--orange);
+}
+@media screen and (max-width:760px) {
+    .opinionsSection .container{
+        width: 100%;
+    }
+}

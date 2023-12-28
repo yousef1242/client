@@ -1,0 +1,38 @@
+.dashboardPage::-webkit-scrollbar {
+  display: none;
+}
+.dashboardPageRightSection {
+  overflow: scroll;
+  height: calc(100vh - 106px);
+  padding-top: 30px;
+}
+.dashboardPageRightSection::-webkit-scrollbar {
+  display: none;
+}
+.dashboardPageRightSection .card {
+  overflow: scroll;
+}
+.dashboardPageRightSection .card::-webkit-scrollbar {
+  display: none;
+}
+.dashboardPageRightSection .card {
+  background-color: #fff;
+  box-shadow: 0 0 10px #efefef;
+  border: none;
+  outline: none;
+  padding: 15px;
+}
+.dashboardPageRightSection .card .cardHeader {
+  margin-bottom: 15px;
+}
+.dashboardPageRightSection .card .cardHeader span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f0f0;
+  color: var(--orange);
+  border-radius: 50%;
+}

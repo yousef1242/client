@@ -1,0 +1,29 @@
+.smallHeader{
+    height: 37px;
+    display: flex;
+    align-items: center;
+    background-color: #f7f9fb !important;
+    border-top: 3px solid var(--orange);
+}
+.smallHeader span{
+    color: var(--gray);
+}
+.smallHeader .smallHeaderContactDiv{
+    display: flex;
+    align-items: center;
+}
+.smallHeader .smallHeaderContactIcon{
+    margin-right: 7px;
+    color: var(--orange);
+}
+.smallHeader .smallHeaderGapSign{
+    margin: 0px 10px;
+    width: 2px;
+    height: 20px;
+    background-color: var(--gray);
+    display: inline-block;
+}
+.smallHeader .smallHeaderLoginText{
+    color:var(--gray);
+    text-align: end;
+}

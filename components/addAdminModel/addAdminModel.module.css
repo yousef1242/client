@@ -1,0 +1,60 @@
+.addAdminModel{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #ffffffa1;
+}
+.addAdminModel .addAdminModelBox{
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #efefef;
+    border: none;
+    outline: none;
+    padding: 15px;
+}
+.addAdminModel .addAdminModelBox .addAdminModelBoxTop{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.addAdminModel .addAdminModelBox .addAdminModelBoxTop span{
+    font-weight: bold;
+    font-size: 19px;
+    color: var(--black);
+}
+.addAdminModel .addAdminModelBox {
+  background-color: #fff;
+  box-shadow: 0 0 10px #efefef;
+  width: 500px;
+  padding: 15px;
+}
+.addAdminModel .addAdminModelBox h4 {
+  color: var(--black);
+}
+.addAdminModel .addAdminModelBox .addAdminModelBoxFormGroup {
+  margin-bottom: 15px;
+}
+.addAdminModel .addAdminModelBox .addAdminModelBoxFormGroup label {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--black);
+}
+.addAdminModel .addAdminModelBox .addAdminModelBoxFormGroup input {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  border: 1px solid var(--gray);
+  outline: none;
+}
+.addAdminModel .addAdminModelBox button {
+  display: block;
+  margin-top: 20px;
+}

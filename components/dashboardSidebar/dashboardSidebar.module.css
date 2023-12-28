@@ -1,0 +1,41 @@
+.dashboardSidebar{
+    background-color: #f7f9fb !important;
+    height: calc(100vh - 106px);
+    padding-top: 30px;
+    overflow: scroll;
+    border-right: 1px solid var(--gray);
+}
+.dashboardSidebar::-webkit-scrollbar{
+    display: none;
+}
+.dashboardSidebar .dashboardSidebarTop{
+    border-bottom: 1px solid var(--gray);
+    padding: 10px 0;
+    text-align: center;
+}
+.dashboardSidebar .dashboardSidebarLinks {
+    padding-top: 20px;
+}
+.dashboardSidebar .dashboardSidebarLinks span{
+    color: var(--black);
+    padding: 10px;
+    font-weight: bold;
+}
+.dashboardSidebar .dashboardSidebarLinks a{
+    color: var(--gray);
+    padding: 10px;
+    padding-left: 13px;
+    display: block;
+    transition: .2s;
+}
+.dashboardSidebar .dashboardSidebarLinks a:hover{
+    color: #fff;
+    background-color: var(--orange);
+}
+.dashboardSidebar .dashboardSidebarLinks .toOrangeColor{
+    background-color: var(--orange);
+    color: #fff;
+}
+.dashboardSidebar .dashboardSidebarLinks .transformIcon{
+    transform: rotate(90deg);
+}

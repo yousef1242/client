@@ -1,0 +1,34 @@
+.mainHeader {
+  height: 69px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.mainHeader .mainHeaderLinks{
+    margin-right: 60px;
+}
+.mainHeader .mainHeaderLinks a{
+    color: var(--black);
+    font-weight: 600;
+    margin: 0px 10px;
+    font-size: 20px;
+    transition: .3s;
+}
+.mainHeader .mainHeaderLinks a:hover{
+    color: var(--orange);
+}
+.mainHeader .mainHeaderActions div{
+    color: var(--black);
+    font-weight: 600;
+    margin: 0px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.mainHeader .toOrangeColor{
+    color: var(--orange)!important;
+}
+@media screen and (max-width:475px) {
+    .mainHeader h4{
+        font-size: 18px;
+    }
+}

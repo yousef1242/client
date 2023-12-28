@@ -1,0 +1,13 @@
+.updateCarForm p{
+    color: black;
+}
+.updateCarForm .fileInput{
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+.updateCarForm img{
+    object-fit: cover;
+}

@@ -1,0 +1,13 @@
+.animated-car-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.animated-car-image {
+  width: 100%;
+  height: auto;
+  transform: translateX(100%); /* Start from the right */
+  transition: transform .2s ease-in-out;
+  position: relative; 
+  right: -400px;
+}
