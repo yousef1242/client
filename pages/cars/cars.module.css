@@ -7,5 +7,6 @@
         background: #fff;
         z-index: 99999999;
         overflow: scroll;
+        height: 100vh!important;
     }
 }

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const SmallHeader = () => {
   const { admin } = useSelector((state) => state.admin);
-  
+
   return (
     <>
       <div className={classes.smallHeader}>

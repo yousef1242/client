@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./dashboardSidebar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { IoIosArrowForward } from "react-icons/io";
+import { logout } from "@/redux/adminSlice";
+import Cookies from "js-cookie";
+import Loading from "../loading/Loding";
 
 const DashboardSidebar = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const { admin } = useSelector((state) => state.admin);
 
   const [openDropdowns, setOpenDropdowns] = useState({
@@ -16,7 +20,7 @@ const DashboardSidebar = () => {
     opinions: false,
     sellcar: false,
     admins: false,
-    // Add more dropdowns as needed
+    logout: false,
   });
 
   const handleDropdownClick = (dropdown) => {
@@ -74,9 +78,7 @@ const DashboardSidebar = () => {
               style={{ cursor: "pointer" }}
             >
               <span>Cars</span>
-              <span
-                className={openDropdowns.cars ? classes.transformIcon : ""}
-              >
+              <span className={openDropdowns.cars ? classes.transformIcon : ""}>
                 <IoIosArrowForward />
               </span>
             </div>
@@ -169,34 +171,34 @@ const DashboardSidebar = () => {
               </div>
             )}
           </div>
-          {/* Sellcar Dropdown */}
+          {/* logout dropdown */}
           <div
             className={classes.dropdown}
-            onClick={() => handleDropdownClick("sellcar")}
+            onClick={() => handleDropdownClick("logout")}
           >
             <div
               className="d-flex justify-content-between"
               style={{ cursor: "pointer" }}
             >
-              <span>Sell_Car</span>
+              <span>Logout</span>
               <span
-                className={openDropdowns.sellcar ? classes.transformIcon : ""}
+                className={openDropdowns.logout ? classes.transformIcon : ""}
               >
                 <IoIosArrowForward />
               </span>
             </div>
-            {openDropdowns.sellcar && (
+            {openDropdowns.logout && (
               <div className={classes.dropdownContent}>
-                <Link
-                  className={
-                    router.pathname === "/dashboard/sell-cars"
-                      ? classes.toOrangeColor
-                      : ""
-                  }
-                  href={`/dashboard/sell-cars`}
+                <span
+                  className={classes["logoutBtn"]}
+                  onClick={() => {
+                    router.push("/");
+                    dispatch(logout());
+                    Cookies.remove("adminInfo");
+                  }}
                 >
-                  Sell_Car
-                </Link>
+                  Logout
+                </span>
               </div>
             )}
           </div>

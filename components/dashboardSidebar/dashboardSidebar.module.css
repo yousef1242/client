@@ -21,15 +21,17 @@
     padding: 10px;
     font-weight: bold;
 }
-.dashboardSidebar .dashboardSidebarLinks a{
-    color: var(--gray);
-    padding: 10px;
-    padding-left: 13px;
-    display: block;
-    transition: .2s;
+.dashboardSidebar .dashboardSidebarLinks a, .logoutBtn{
+    color: var(--notverygray)!important;
+    padding: 10px!important;
+    padding-left: 13px!important;
+    display: block!important;
+    font-weight: normal!important;
+    transition: .2s!important;
+    cursor: pointer;
 }
-.dashboardSidebar .dashboardSidebarLinks a:hover{
-    color: #fff;
+.dashboardSidebar .dashboardSidebarLinks a:hover, .logoutBtn:hover{
+    color: #fff!important;
     background-color: var(--orange);
 }
 .dashboardSidebar .dashboardSidebarLinks .toOrangeColor{

@@ -62,7 +62,7 @@ const AdminsTable = ({ fetchData, setFetchData }) => {
               <td>{ad?.name}</td>
               <td>{ad?.email}</td>
               <td>
-                {ad?._id !== admin.id ? (
+                {ad?._id !== admin?.id ? (
                   <div className="d-flex align-items-center justify-content-center">
                     <span
                       onClick={() => deleteAdminFunction(ad?._id)}

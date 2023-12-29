@@ -19,18 +19,21 @@ const ShowSideHeader = ({ setShowSideHeader }) => {
         </div>
         <div className={classes.ShowSideHeaderLinks}>
           <Link
+            onClick={() => setShowSideHeader(false)}
             className={router.pathname === "/" ? classes.toOrangeColor : ""}
             href={`/`}
           >
             Home
           </Link>
           <Link
+            onClick={() => setShowSideHeader(false)}
             className={router.pathname === "/cars" ? classes.toOrangeColor : ""}
             href={`/cars`}
           >
             Cars
           </Link>
           <Link
+            onClick={() => setShowSideHeader(false)}
             className={
               router.pathname === "/about-us" ? classes.toOrangeColor : ""
             }
@@ -39,6 +42,7 @@ const ShowSideHeader = ({ setShowSideHeader }) => {
             About Us
           </Link>
           <Link
+            onClick={() => setShowSideHeader(false)}
             className={
               router.pathname === "/contact" ? classes.toOrangeColor : ""
             }
@@ -47,6 +51,7 @@ const ShowSideHeader = ({ setShowSideHeader }) => {
             Contact
           </Link>
           <Link
+            onClick={() => setShowSideHeader(false)}
             href={admin !== null ? "/dashboard" : "/login"}
             className={
               router.pathname === "/login" || router.pathname === "/dashboard"
