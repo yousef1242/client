@@ -8,6 +8,10 @@ import { IoImageOutline } from "react-icons/io5";
 import { AiOutlineDelete } from "react-icons/ai";
 import toast from "react-hot-toast";
 import Loading from "../loading/Loding";
+import { FaPlus } from "react-icons/fa6";
+import axios from "axios";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { colorsArray } from "@/utils/colorsarray";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -126,7 +130,7 @@ const AddCarForm = () => {
                   name: e.target.value,
                 })
               }
-              value={field.name}
+              value={field?.name}
               type="text"
               id="name"
               placeholder="BMW x6"
@@ -141,7 +145,7 @@ const AddCarForm = () => {
                   model: e.target.value,
                 })
               }
-              value={field.model}
+              value={field?.model}
               type="text"
               id="model"
               placeholder="2023"
@@ -172,36 +176,30 @@ const AddCarForm = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="color">Color</label>
-            <select
+            <input
+              type="text"
+              id="color"
+              placeholder="Red"
+              list="colorOptions"
+              value={field?.color}
+              name="color"
               onChange={(e) =>
                 setField({
                   ...field,
                   color: e.target.value,
                 })
               }
-              id="color"
-            >
-              <option disabled selected>
-                Choose color
-              </option>
-              {[
-                "red",
-                "black",
-                "white",
-                "blue",
-                "green",
-                "yellow",
-                "orange",
-                "silver",
-                "brown",
-              ]?.map((color) => (
-                <>
-                  <option value={color} key={color}>
-                    {color}
-                  </option>
-                </>
+            />
+
+            <datalist id="colorOptions">
+              {colorsArray?.map((color, index) => (
+                <option
+                  value={color?.name}
+                  key={index + 1}
+                  className="text-capitalize"
+                />
               ))}
-            </select>
+            </datalist>
           </div>
           <div className="mb-3">
             <label htmlFor="price">Price</label>
@@ -240,8 +238,8 @@ const AddCarForm = () => {
           </div>
           <div className="mb-3">
             <label>Files</label>
-            <div className="d-flex justify-content-between gap-2">
-              {[1, 2, 3]?.map((input, index) => (
+            <div className="d-flex w-100 justify-content-center justify-content-md-start gap-3">
+              {[1, 2, 3, 4]?.map((_, index) => (
                 <div key={index} className={classes.fileInput}>
                   <input
                     onChange={(e) => {

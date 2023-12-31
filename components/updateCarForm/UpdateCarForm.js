@@ -297,7 +297,7 @@ const updateCarForm = () => {
           <div className="mb-3">
             <label>Files</label>
             <div className="d-flex justify-content-between gap-2">
-              {[1, 2, 3]?.map((_, index) => (
+              {[1, 2, 3, 4]?.map((_, index) => (
                 <div key={index} className={classes.fileInput}>
                   <input
                     onChange={(e) => {

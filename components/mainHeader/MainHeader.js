@@ -28,9 +28,9 @@ const MainHeader = () => {
               >
                 <FaBars />
               </span>
-              <h4 className="fw-bold m-0">
+              <Link href={`/`} className="fw-bold fs-4 text-black m-0">
                 AUTO <span style={{ color: "var(--orange)" }}>SHOWROOM</span>
-              </h4>
+              </Link>
             </div>
             <div className="col-4 col-md-8 d-md-flex align-items-center direction-row justify-content-end">
               <div className={`${classes.mainHeaderLinks} d-none d-md-flex`}>
@@ -132,7 +132,11 @@ const MainHeader = () => {
       ) : (
         ""
       )}
-      {showCompareModel ? <CompareModel setShowCompareModel={setShowCompareModel} /> : ""}
+      {showCompareModel ? (
+        <CompareModel setShowCompareModel={setShowCompareModel} />
+      ) : (
+        ""
+      )}
     </>
   );
 };
