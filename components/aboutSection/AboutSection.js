@@ -1,5 +1,5 @@
 import classes from "./aboutSection.module.css";
-import aboutSectionImage from "../../public/aboutSectionImage.svg";
+import aboutSectionImage from "../../public/By my car-bro.svg";
 import Image from "next/image";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { IoMdTimer } from "react-icons/io";
@@ -10,7 +10,7 @@ const AboutSection = () => {
     <>
       <div className={classes.aboutSection}>
         <div className="container">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-12 col-md-7 mb-4">
               <h2 className="fw-bold mb-5 position-relative">
                 WELCOME TO AUTO{" "}
@@ -25,7 +25,6 @@ const AboutSection = () => {
                 powerful plugins will help you to own an amazing site.
               </p>
               <p>
-                {" "}
                 This theme provides you with full functions for your automotive
                 business. Start Creating Your Superb Website In No Time with
                 AutoShowroom.
