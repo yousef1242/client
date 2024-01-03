@@ -5,7 +5,8 @@
   align-items: center;
   background-image: url("../../public/heroSectionImage.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
+  background-attachment: fixed;
   background-size: cover;
   position: relative;
   overflow: hidden;

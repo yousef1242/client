@@ -92,7 +92,7 @@ const DashboardSidebar = () => {
                   }
                   href={`/dashboard/cars`}
                 >
-                  cars
+                  Cars
                 </Link>
                 <Link
                   className={

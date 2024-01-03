@@ -3,6 +3,7 @@ import classes from "./heroSection.module.css";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Loading from "../loading/Loding";
 
 const HeroSection = () => {
   const router = useRouter();
@@ -27,7 +28,10 @@ const HeroSection = () => {
         <div className="container z-1">
           <div className="row">
             <div className="col-12 col-md-7">
-              <h1 className="mb-4 fw-bold text-white">Welcome to Toyota</h1>
+              <h1 className="mb-4 fw-bold text-white">
+                Welcome to{" "}
+                <span style={{ color: "var(--orange)" }}>MOTOR ONE</span>
+              </h1>
               <p className="mb-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Doloribus repudiandae nobis perferendis minus dolore a

@@ -8,12 +8,7 @@ import { IoImageOutline } from "react-icons/io5";
 import { AiOutlineDelete } from "react-icons/ai";
 import toast from "react-hot-toast";
 import Loading from "../loading/Loding";
-import { FaPlus } from "react-icons/fa6";
-import axios from "axios";
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { colorsArray } from "@/utils/colorsarray";
-
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const AddCarForm = () => {
   const [categoriesData, setCategoriesData] = useState([]);
@@ -25,9 +20,9 @@ const AddCarForm = () => {
     category: "",
     color: "",
     price: "",
+    specifications: "",
+    description: "",
   });
-  const [description, setDescription] = useState("");
-  const [specifications, setSpecifications] = useState("");
   const { admin } = useSelector((state) => state.admin);
   const router = useRouter();
 
@@ -76,8 +71,8 @@ const AddCarForm = () => {
       field.category === "" ||
       field.color === "" ||
       field.price === "" ||
-      description === "" ||
-      specifications === ""
+      field.description === "" ||
+      field.specifications === ""
     ) {
       return toast.error("The required field cannot be empty.");
     }
@@ -92,8 +87,8 @@ const AddCarForm = () => {
     formData.append("price", field.price);
     formData.append("category", field.category);
     formData.append("color", field.color);
-    formData.append("description", description);
-    formData.append("specifications", specifications);
+    formData.append("description", field.description);
+    formData.append("specifications", field.specifications);
     for (let i = 0; i < files.length; i++) {
       formData.append("file", files[i].filename);
     }
@@ -218,23 +213,31 @@ const AddCarForm = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="description">Description</label>
-            <ReactQuill
-              onChange={setDescription}
-              value={description}
+            <textarea
+              onChange={(e) =>
+                setField({
+                  ...field,
+                  description: e.target.value,
+                })
+              }
               id="description"
-              theme="snow"
-              key={"description-quill"}
-            />
+              className="w-100 border border-1 p-2"
+              style={{ background: "none", outline: "none" }}
+            ></textarea>
           </div>
           <div className="mb-3">
             <label htmlFor="Specifications">Specifications</label>
-            <ReactQuill
-              value={specifications}
-              onChange={setSpecifications}
+            <textarea
+              onChange={(e) =>
+                setField({
+                  ...field,
+                  specifications: e.target.value,
+                })
+              }
               id="Specifications"
-              theme="snow"
-              key={"specifications-quill"}
-            />
+              className="w-100 border border-1 p-2"
+              style={{ background: "none", outline: "none" }}
+            ></textarea>
           </div>
           <div className="mb-3">
             <label>Files</label>

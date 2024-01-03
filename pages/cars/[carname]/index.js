@@ -86,10 +86,11 @@ const SingleCarPage = ({ car, error, errorMessage }) => {
                 >
                   AUTO SPECIFICATIONS
                 </h5>
-                <div
+                <p
                   className={`overflow-x-auto text-black ${classes["car-specs"]}`}
-                  dangerouslySetInnerHTML={{ __html: car?.specifications }}
-                />
+                >
+                  {car?.specifications}
+                </p>
               </div>
             </div>
             <div className="p-4 shadow w-100 col-9 d-block d-md-none">
@@ -98,10 +99,7 @@ const SingleCarPage = ({ car, error, errorMessage }) => {
               >
                 CAR OVERVIEW
               </h5>
-              <div
-                className={classes["car-desc"]}
-                dangerouslySetInnerHTML={{ __html: car?.description }}
-              />
+              <p className={classes["car-desc"]}>{car?.description}</p>
             </div>
           </div>
         </div>

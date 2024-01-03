@@ -9,9 +9,9 @@ const Footer = () => {
           <div className="row">
             <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-0">
               <h4>
-                AUTO{" "}
+                MOTOR{" "}
                 <span className="fw-bold" style={{ color: "var(--orange)" }}>
-                  SHOWROOM
+                  ONE
                 </span>
               </h4>
             </div>
@@ -30,9 +30,9 @@ const Footer = () => {
             </div>
             <div className="col-12 col-sm-6 col-md-4 col-lg-3">
               <h4>CONTACT INFO</h4>
-              <p>418 Saint Regis Rd, Hogansburg, New York, NY 10000, USA</p>
-              <p>+88 1234 888 999</p>
-              <p>info@autoshowroom.com</p>
+              <p>New Cairo 1, Cairo Governorate 4735420</p>
+              <p>+1126556666</p>
+              <p>Motoroneeg1998@gmail.com</p>
             </div>
             <div className="col-12 text-center mt-5">
               <p className="text-white">

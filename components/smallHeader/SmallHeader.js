@@ -14,20 +14,20 @@ const SmallHeader = () => {
           <div className="row">
             <div className="col-12 col-md-6">
               <div
-                className={`${classes.smallHeaderContactDiv}  justify-content-md-start justify-content-center`}
+                className={`${classes.smallHeaderContactDiv} w-100  justify-content-md-start justify-content-center`}
               >
                 <span className={classes.smallHeaderContactIcon}>
                   <FaPhoneAlt />
                 </span>
                 <span className={classes.smallHeaderContactText}>
-                  +01 123 456 78
+                  +1126556666
                 </span>
                 <span className={classes.smallHeaderGapSign}></span>
                 <span className={classes.smallHeaderContactIcon}>
                   <MdEmail />
                 </span>
                 <span className={classes.smallHeaderContactText}>
-                  example@gmail.com
+                  Motoroneeg1998@gmail.com
                 </span>
               </div>
             </div>

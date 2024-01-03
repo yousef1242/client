@@ -29,7 +29,7 @@ const MainHeader = () => {
                 <FaBars />
               </span>
               <Link href={`/`} className="fw-bold fs-4 text-black m-0">
-                AUTO <span style={{ color: "var(--orange)" }}>SHOWROOM</span>
+                MOTOR <span style={{ color: "var(--orange)" }}>ONE</span>
               </Link>
             </div>
             <div className="col-4 col-md-8 d-md-flex align-items-center direction-row justify-content-end">

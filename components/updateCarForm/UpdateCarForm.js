@@ -8,8 +8,7 @@ import { IoImageOutline } from "react-icons/io5";
 import { AiOutlineDelete } from "react-icons/ai";
 import toast from "react-hot-toast";
 import Loading from "../loading/Loding";
-
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import { colorsArray } from "@/utils/colorsarray";
 
 const updateCarForm = () => {
   const [categoriesData, setCategoriesData] = useState([]);
@@ -21,6 +20,8 @@ const updateCarForm = () => {
     category: "",
     color: "",
     price: "",
+    specifications: "",
+    description: "",
   });
   const [description, setDescription] = useState("");
   const [specifications, setSpecifications] = useState("");
@@ -64,9 +65,9 @@ const updateCarForm = () => {
               category: data?.data?.category,
               color: data?.data?.color,
               price: data?.data?.price,
+              description: data?.data.description,
+              specifications: data?.data.specifications,
             });
-            setDescription(data?.data?.description);
-            setSpecifications(data?.data?.specifications);
             const carFiles = data?.data?.files;
             if (!files.length > 0) {
               for (let i = 0; carFiles && i < carFiles.length; i++) {
@@ -105,7 +106,7 @@ const updateCarForm = () => {
     }, 1500);
   }, []);
 
-  //   update car function
+  // update car function
   const updateCarFunction = async (e) => {
     e.preventDefault();
     if (
@@ -227,37 +228,30 @@ const updateCarForm = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="color">Color</label>
-            <select
+            <input
+              type="text"
+              id="color"
+              placeholder="Red"
+              list="colorOptions"
+              value={field?.color}
+              name="color"
               onChange={(e) =>
                 setField({
                   ...field,
                   color: e.target.value,
                 })
               }
-              id="color"
-              value={field?.color}
-            >
-              <option disabled selected>
-                Choose color
-              </option>
-              {[
-                "red",
-                "black",
-                "white",
-                "blue",
-                "green",
-                "yellow",
-                "orange",
-                "silver",
-                "brown",
-              ]?.map((color) => (
-                <>
-                  <option value={color} key={color}>
-                    {color}
-                  </option>
-                </>
+            />
+
+            <datalist id="colorOptions">
+              {colorsArray?.map((color, index) => (
+                <option
+                  value={color?.name}
+                  key={index + 1}
+                  className="text-capitalize"
+                />
               ))}
-            </select>
+            </datalist>
           </div>
           <div className="mb-3">
             <label htmlFor="price">Price</label>
@@ -276,23 +270,33 @@ const updateCarForm = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="description">Description</label>
-            <ReactQuill
-              onChange={setDescription}
-              value={description}
+            <textarea
+            value={field?.description}
+              onChange={(e) =>
+                setField({
+                  ...field,
+                  description: e.target.value,
+                })
+              }
               id="description"
-              theme="snow"
-              key={"description-quill"}
-            />
+              className="w-100 border border-1 p-2"
+              style={{ background: "none", outline: "none" }}
+            ></textarea>
           </div>
           <div className="mb-3">
             <label htmlFor="Specifications">Specifications</label>
-            <ReactQuill
-              value={specifications}
-              onChange={setSpecifications}
+            <textarea
+            value={field?.specifications}
+              onChange={(e) =>
+                setField({
+                  ...field,
+                  specifications: e.target.value,
+                })
+              }
               id="Specifications"
-              theme="snow"
-              key={"specifications-quill"}
-            />
+              className="w-100 border border-1 p-2"
+              style={{ background: "none", outline: "none" }}
+            ></textarea>
           </div>
           <div className="mb-3">
             <label>Files</label>
@@ -337,7 +341,7 @@ const updateCarForm = () => {
                   {files?.find((file) => file.place === index) ? (
                     <div className="position-relative h-100">
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         className="w-100 h-100"
                         src={
                           files.find((file) => file.place === index)?.url &&
