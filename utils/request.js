@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: "https://wicked-gray-gorilla.cyclic.app",
+  baseURL: "https://autoroomserver.onrender.com",
 });
 
 export default request;
